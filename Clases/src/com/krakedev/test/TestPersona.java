@@ -1,8 +1,10 @@
-package com.krakedev;
+package com.krakedev.test;
 /*
  * Comentario de varias lineas
  * 
  */
+
+import com.krakedev.Persona;
 
 public class TestPersona {
 
