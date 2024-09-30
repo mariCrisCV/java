@@ -21,7 +21,6 @@ public class TestAdminPersonas {
 		ArrayList<Persona> personasMayores=admin.buscarMayores(10);
 		System.out.println("mayores: "+personasMayores.size());
 		
-
 	}
 
 }
