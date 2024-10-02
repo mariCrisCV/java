@@ -5,20 +5,20 @@ public class Contacto {
 	private String nombre;
 	private String apellido;
 	private Direccion direccion;
-	
+
 	public Contacto(String cedula, String nombre, String apellido) {
 		this.cedula = cedula;
 		this.nombre = nombre;
 		this.apellido = apellido;
 	}
-	
+
 	public void imprimir() {
-		System.out.println("Cédula: "+cedula);
-		System.out.println("Nombre: "+nombre);
-		System.out.println("Apellido: "+apellido);
-		System.out.println("Dirección: ");
-		System.out.println("  Calle Principal: "+direccion.getCallePrincipal());
-		System.out.println("  Calle Secundaria: "+direccion.getCalleSecundaria());
+		System.out.println("***" + nombre + " " + apellido + "***");
+		if (direccion == null) {
+			System.out.println("No tiene asociada una direccion");
+		} else {
+			System.out.println("Dirección: " + direccion.getCallePrincipal() + " y " + direccion.getCalleSecundaria());
+		}
 	}
 
 	public String getCedula() {
@@ -52,8 +52,5 @@ public class Contacto {
 	public void setDireccion(Direccion direccion) {
 		this.direccion = direccion;
 	}
-	
-	
-	
-	
+
 }
