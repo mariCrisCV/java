@@ -20,7 +20,7 @@ public class Estudiante {
 			this.notas.add(nuevaNota);
 		} else {
 			for (int i = 0; i < notas.size(); i++) {
-				if (!notas.get(i).equals(nuevaNota) && nuevaNota.getCalificacion()!=-1) {
+				if (!notas.get(i).equals(nuevaNota) && nuevaNota.getCalificacion() != -1) {
 					this.notas.add(nuevaNota);
 				}
 			}
@@ -29,37 +29,33 @@ public class Estudiante {
 
 	public void modificarNota(String codigo, double nuevaNota) {
 		Nota elementoNota = null;
+		Nota notaABuscar = new Nota(new Materia(codigo, ""), nuevaNota);
 		for (int i = 0; i < notas.size(); i++) {
-			elementoNota = notas.get(i);
-			if (!codigo.equals(elementoNota.getMateria().getCodigo())) {
-				System.out.println("No se encontró ese código de materia");
-			} else if (codigo.equals(elementoNota.getMateria().getCodigo()) && nuevaNota > 0 && nuevaNota <= 10) {
-				elementoNota.setCalificacion(nuevaNota);
+			if (notas.get(i).equals(notaABuscar)) {
+				elementoNota = notas.get(i);
 			}
 		}
+		elementoNota.setCalificacion(nuevaNota);
 	}
 
 	public double calcularPromedioNotasEstudiante() {
 		double sumaTotal = 0.0;
 		double promedio;
+		Nota nota;
 		if (notas.isEmpty()) {
 			return 0.0;
 		}
 		for (int i = 0; i < notas.size(); i++) {
-			sumaTotal = notas.get(i).getCalificacion() + notas.get(i).getCalificacion();
+			nota = notas.get(i);
+			sumaTotal += nota.getCalificacion();
 		}
 		promedio = sumaTotal / notas.size();
 		return promedio;
 	}
 
 	public void mostrar() {
-		Estudiante elementoEstudiante;
-		ArrayList<Estudiante> estudiantes = new ArrayList<>();
-		for (int i = 0; i < estudiantes.size(); i++) {
-			elementoEstudiante = estudiantes.get(i);
-			System.out.println("Estudiante [Nombre: " + elementoEstudiante.nombre + ", Apellido: "
-					+ elementoEstudiante.apellido + ", Cedula: " + elementoEstudiante.cedula + "]");
-		}
+		System.out.println("Estudiante [Nombre: " + this.nombre + ", Apellido: " + this.apellido + ", Cedula: "
+				+ this.cedula + "]");
 	}
 
 	public String getNombre() {

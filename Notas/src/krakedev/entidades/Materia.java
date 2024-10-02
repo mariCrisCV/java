@@ -3,7 +3,7 @@ package krakedev.entidades;
 public class Materia {
 	private String codigo;
 	private String nombre;
-	
+
 	public Materia(String codigo, String nombre) {
 		this.codigo = codigo;
 		this.nombre = nombre;
@@ -24,7 +24,5 @@ public class Materia {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	
-	
-	
+
 }
