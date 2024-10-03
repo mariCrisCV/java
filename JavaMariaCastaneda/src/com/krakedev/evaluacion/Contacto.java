@@ -17,12 +17,18 @@ public class Contacto {
 	}
 
 	public void imprimir() {
-		System.out.println("***" + nombre + " " + apellido + "***");
-		if (direccion == null) {
-			System.out.println("No tiene asociada una direccion");
-		} else {
-			System.out.println("Dirección: " + direccion.getCallePrincipal() + " y " + direccion.getCalleSecundaria());
-		}
+		System.out.println("Información del Contacto:");
+		System.out.println("Cédula: "+cedula);
+		System.out.println("Nombre: "+nombre+ " "+apellido);
+		System.out.println("Dirección: ");
+		System.out.println("  Calle Principal: "+direccion.getCallePrincipal());
+		System.out.println("  Calle Secundaria: "+direccion.getCalleSecundaria());
+//		System.out.println("***" + nombre + " " + apellido + "***");
+//		if (direccion == null) {
+//			System.out.println("No tiene asociada una direccion");
+//		} else {
+//			System.out.println("Dirección: " + direccion.getCallePrincipal() + " y " + direccion.getCalleSecundaria());
+//		}
 	}
 
 	public void agregarTelefono(Telefono telefono) {
