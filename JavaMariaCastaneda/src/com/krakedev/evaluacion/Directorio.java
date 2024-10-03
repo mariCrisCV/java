@@ -6,16 +6,17 @@ import java.util.Date;
 public class Directorio {
 	private ArrayList<Contacto> contactos;
 	private Date fechaModificacion;
-	
+
 	public Directorio() {
-		contactos=new ArrayList<>();
+		contactos = new ArrayList<>();
 	}
 
 	public boolean agregarContacto(Contacto contacto) {
-		if (!contacto.equals(null)) {
+		if (contacto != null && buscarPorCedula(contacto.getCedula()) == null) {
 			contactos.add(contacto);
+			return true;
 		}
-		return true;
+			return false;		
 	}
 
 	public Contacto buscarPorCedula(String cedula) {
@@ -30,7 +31,5 @@ public class Directorio {
 		}
 		return null;
 	}
-	
-	
-	
+
 }
