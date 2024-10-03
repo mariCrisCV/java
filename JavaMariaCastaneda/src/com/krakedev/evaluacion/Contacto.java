@@ -26,7 +26,7 @@ public class Contacto {
 	}
 
 	public void agregarTelefono(Telefono telefono) {
-		if (!telefono.equals(null) && telefono.getEstado().equals("C")) {
+		if (!telefono.equals(null)) {
 			telefonos.add(telefono);
 		}
 	}
@@ -41,7 +41,18 @@ public class Contacto {
 						"Numero: " + elementoTelefono.getNumero() + ", " + "Tipo: " + elementoTelefono.getTipo());
 			}
 		}
+	}
 
+	public ArrayList<Telefono> recuperarIncorrectos() {
+		ArrayList<Telefono> telefonosIncorrectos = new ArrayList<>();
+		Telefono elementoTelefonoIncorrecto;
+		for (int i = 0; i < telefonos.size(); i++) {
+			elementoTelefonoIncorrecto = telefonos.get(i);
+			if (!elementoTelefonoIncorrecto.equals(null) && elementoTelefonoIncorrecto.getEstado().equals("E")) {
+				telefonosIncorrectos.add(elementoTelefonoIncorrecto);
+			}
+		}
+		return telefonosIncorrectos;
 	}
 
 	public String getCedula() {
