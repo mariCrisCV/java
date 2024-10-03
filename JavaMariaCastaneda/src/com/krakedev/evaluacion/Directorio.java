@@ -42,5 +42,20 @@ public class Directorio {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/mm/dd HH:mm:ss");
 		return sdf.format(ultimaModificacion);
 	}
+	
+	public int contarPerdidos() {
+		int contador=0;
+		Contacto elementoPerdido=null;
+		Contacto elementoContacto=null;
+		for(int i = 0; i < contactos.size(); i++) {
+			elementoContacto=contactos.get(i);
+			if(elementoContacto.getDireccion()==null) {
+				elementoPerdido=elementoContacto;
+				contador++;
+			}
+		}
+		
+		return contador;
+	}
 
 }
