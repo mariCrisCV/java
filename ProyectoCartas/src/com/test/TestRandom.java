@@ -12,7 +12,6 @@ public class TestRandom {
 	        } else {
 	            System.out.println("El método obtenerPosicion no ha arrojado 0 o 1.");
 	        }
-
 	}
 
 }

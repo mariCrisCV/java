@@ -1,6 +1,7 @@
 package com.test;
 
 import com.entidades.Carta;
+import com.entidades.Naipe;
 import com.entidades.Numero;
 import com.entidades.Palos;
 
@@ -15,6 +16,11 @@ public class TestPalos {
 		
 		Carta carta=new Carta(numero,"TR");
 		carta.mostrarCarta();
+		
+		Naipe naipe=new Naipe();
+		System.out.println(naipe.getCartas().size());
+		
+		naipe.barajar();
 	}
 
 }

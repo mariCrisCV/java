@@ -3,6 +3,7 @@ package com.entidades;
 public class Carta {
 	private Numero numeroCarta;
 	private String palo;
+	private String estado = "N";
 		
 	public Carta(Numero numeroCarta, String palo) {
 		this.numeroCarta = numeroCarta;
@@ -23,6 +24,15 @@ public class Carta {
 
 	public void setPalo(String palo) {
 		this.palo = palo;
+	}
+	
+
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
 	}
 
 	public void mostrarCarta() {
