@@ -51,7 +51,7 @@ public class Cuota {
 		double abonoCapitalFormato=Utilitarios.redondearConBigDecimal(abonoCapital);
 		double saldoFormato=Utilitarios.redondearConBigDecimal(saldo);
 		
-		System.out.println(numero+" |"+cuotaFormato+" |"+capitalInicioFormato+" |"+interesFormato+" |"+abonoCapitalFormato+" |"+saldoFormato);
+		System.out.println(numero+"      |"+cuotaFormato+" |"+capitalInicioFormato+"  |"+interesFormato+"    |"+abonoCapitalFormato+"   |"+saldoFormato);
 	}
 	
 }
