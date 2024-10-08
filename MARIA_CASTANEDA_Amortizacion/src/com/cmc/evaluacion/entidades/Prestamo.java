@@ -7,6 +7,7 @@ public class Prestamo {
 	private double interes;
 	private int plazo;
 	private ArrayList<Cuota> cuotas;
+	private Cliente cliente;
 	
 	
 	public Prestamo(double monto, double interes, int plazo) {
@@ -14,8 +15,20 @@ public class Prestamo {
 		this.interes = interes;
 		this.cuotas= new ArrayList<>();
 		this.plazo= plazo;
+		this.cliente =cliente;
+	}
+	
+	public Prestamo(Cliente cliente) {
+		this.cliente =cliente;
+	}
+	
+	public Cliente getCliente() {
+		return cliente;
 	}
 
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
 
 	public double getMonto() {
 		return monto;
@@ -55,7 +68,9 @@ public class Prestamo {
 		this.cuotas.add(cuota);
 	}
 
-
+	public void mostrarPrestamo() {
+		System.out.println("[monto= "+monto+", interes= "+interes+", plazo: "+plazo+"]");
+	}
 	
 	
 	
